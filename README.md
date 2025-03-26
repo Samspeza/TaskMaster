@@ -1,77 +1,145 @@
-Projeto: TaskMaster - Gerenciador de Tarefas Inteligente
-Objetivo:
+README do Backend (Node.js)
 
-Aplicativo web para gerenciar tarefas e projetos, utilizando tecnologias modernas de desenvolvimento, como React para o front-end, Node.js para o back-end, e MongoDB para o banco de dados.
+# Task Master Backend
 
-Funcionalidades:
+Este é o backend do projeto **Task Master**, uma aplicação para gerenciamento de tarefas. O backend é construído usando **Node.js**, **Express** e **MongoDB**.
 
-    Cadastro de Tarefas:
+## Requisitos
 
-        Permite que o usuário crie tarefas, defina prazos, prioridades e adicione descrições.
+Antes de começar, você precisa ter o seguinte instalado na sua máquina:
 
-    Organização por Projetos:
+- [Node.js](https://nodejs.org/) (versão 14 ou superior)
+- [MongoDB](https://www.mongodb.com/) (ou um banco de dados MongoDB na nuvem, como MongoDB Atlas)
 
-        O usuário pode criar e gerenciar múltiplos projetos e associar tarefas a projetos específicos.
+## Instalação
 
-    Lista de Tarefas Interativa:
+1. Clone este repositório:
 
-        Mostra todas as tarefas em uma interface limpa, com filtros para visualização por data, prioridade e status.
+   ```bash
+   git clone https://github.com/seu-usuario/task-master-backend.git
+   cd task-master-backend
 
-    Status das Tarefas:
+    Instale as dependências:
 
-        A tarefa pode ter diferentes status (ex.: Pendente, Em Progresso, Concluída) e ser atualizada facilmente.
+npm install
 
-    Notificações:
+Crie um arquivo .env na raiz do projeto e defina as variáveis de ambiente necessárias:
 
-        Notifique o usuário quando uma tarefa está prestes a vencer ou se o prazo de uma tarefa foi alterado.
+MONGO_URI=<sua_string_de_conexao_mongodb>
+PORT=5000
 
-    Sistema de Autenticação e Autorização:
+Inicie o servidor:
 
-        Permite que diferentes usuários se registrem e gerenciem suas próprias tarefas. Inclui login com autenticação JWT.
+    npm start
 
-    Integração com Calendário:
+    O servidor estará rodando em http://localhost:5000.
 
-        Integração com uma API de calendário (como Google Calendar) para exibir tarefas no calendário e permitir que o usuário visualize os prazos de forma mais intuitiva.
+Rotas
+/api/tasks
 
-    Pesquisa e Filtros Avançados:
+    GET: Obtém todas as tarefas.
 
-        O sistema permitirá que o usuário busque e filtre tarefas por diferentes parâmetros, como prazo, prioridade, e projetos.
+    POST: Cria uma nova tarefa. Exemplo de corpo da requisição:
 
-    Interface Responsiva:
+    {
+      "title": "Nova Tarefa",
+      "description": "Descrição da tarefa"
+    }
 
-        Crie uma UI/UX responsiva para que o sistema funcione bem tanto em desktops quanto dispositivos móveis.
+/api/tasks/:id
 
-    Relatórios e Estatísticas:
+    GET: Obtém uma tarefa específica.
 
-        O usuário poderá visualizar gráficos e relatórios sobre o desempenho das tarefas (quantas tarefas foram concluídas em um mês, por exemplo).
+    PUT: Atualiza uma tarefa existente. Exemplo de corpo da requisição:
 
-    Tema Claro e Escuro:
+    {
+      "title": "Tarefa Atualizada",
+      "description": "Descrição atualizada"
+    }
 
-        Inclua a funcionalidade de alternar entre temas claro e escuro para uma experiência personalizada.
+    DELETE: Deleta uma tarefa específica.
 
-Tecnologias:
+/api/tasks/:id/complete
 
-    Front-end:
+    PUT: Marca uma tarefa como concluída.
 
-        React (com hooks e context API).
+Licença
 
-        Tailwind CSS para um design moderno e responsivo.
+Este projeto está licenciado sob a MIT License.
 
-        Axios para fazer requisições HTTP.
 
-    Back-end:
+---
 
-        Node.js com Express para criar uma API RESTful.
+### **README do Frontend (React)**
 
-        JWT (JSON Web Tokens) para autenticação de usuários.
+```markdown
+# Task Master Frontend
 
-        MongoDB para armazenar as tarefas, usuários e projetos.
+Este é o frontend do projeto **Task Master**, uma aplicação de gerenciamento de tarefas construída com **React** e **Material-UI**.
 
-    Extras:
+## Requisitos
 
-        Mongoose para interação com MongoDB.
+Antes de começar, você precisa ter o seguinte instalado na sua máquina:
 
-        Node-cron ou Agenda para agendamento de notificações e tarefas periódicas.
+- [Node.js](https://nodejs.org/) (versão 14 ou superior)
 
-        Heroku ou Vercel para hospedagem do projeto.
+## Instalação
+
+1. Clone este repositório:
+
+   ```bash
+   git clone https://github.com/seu-usuario/task-master-frontend.git
+   cd task-master-frontend
+
+    Instale as dependências:
+
+npm install
+
+Inicie o servidor de desenvolvimento:
+
+    npm start
+
+    O aplicativo estará rodando em http://localhost:3000.
+
+Funcionalidades
+
+    Visualização de tarefas: Exibe todas as tarefas criadas, com a opção de marcá-las como concluídas.
+
+    Criação de tarefas: Permite adicionar novas tarefas com título e descrição.
+
+    Edição de tarefas: Permite editar as tarefas já criadas.
+
+    Filtragem de tarefas: Exibe tarefas filtradas por status (pendente ou concluída).
+
+    Design responsivo: Utiliza o Material-UI para criar uma interface limpa e responsiva.
+
+Integração com o Backend
+
+Este frontend se comunica com o backend do Task Master. Para configurar o backend, siga as instruções no README do Backend.
+
+No arquivo src/axios.js, a URL da API é configurada para o backend:
+
+const api = axios.create({
+  baseURL: "http://localhost:5000/api", // Altere se necessário
+});
+
+Licença
+
+Este projeto está licenciado sob a MIT License.
+
+
+---
+
+### **Passos Finais:**
+
+1. **Personalização**: Lembre-se de personalizar a URL de acesso à API (caso esteja usando uma URL diferente para o backend). No arquivo do frontend, a URL base está configurada como `http://localhost:5000/api`.
+
+2. **Subir os Projetos para o GitHub**: Após criar e ajustar esses arquivos, faça o commit e push para os repositórios do GitHub:
+
+   - **Backend**: `git push origin master`
+   - **Frontend**: `git push origin master`
+
+3. **Documentação**: Se desejar adicionar mais detalhes sobre como o projeto foi estruturado ou o funcionamento interno de algumas partes específicas do código, sinta-se à vontade para expandir a documentação com explicações mais detalhadas.
+
+Esses **READMEs** devem ser úteis para qualquer pessoa que queira entender como configurar e executar o seu projeto.
 
