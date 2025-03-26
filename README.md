@@ -123,23 +123,5 @@ const api = axios.create({
   baseURL: "http://localhost:5000/api", // Altere se necessário
 });
 
-Licença
-
-Este projeto está licenciado sob a MIT License.
-
-
 ---
-
-### **Passos Finais:**
-
-1. **Personalização**: Lembre-se de personalizar a URL de acesso à API (caso esteja usando uma URL diferente para o backend). No arquivo do frontend, a URL base está configurada como `http://localhost:5000/api`.
-
-2. **Subir os Projetos para o GitHub**: Após criar e ajustar esses arquivos, faça o commit e push para os repositórios do GitHub:
-
-   - **Backend**: `git push origin master`
-   - **Frontend**: `git push origin master`
-
-3. **Documentação**: Se desejar adicionar mais detalhes sobre como o projeto foi estruturado ou o funcionamento interno de algumas partes específicas do código, sinta-se à vontade para expandir a documentação com explicações mais detalhadas.
-
-Esses **READMEs** devem ser úteis para qualquer pessoa que queira entender como configurar e executar o seu projeto.
 
