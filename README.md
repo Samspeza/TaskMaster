@@ -1,4 +1,3 @@
-README do Backend (Node.js)
 
 # Task Master Backend
 
