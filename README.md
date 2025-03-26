@@ -1,24 +1,22 @@
+Task Master Backend
 
-# Task Master Backend
-
-Este é o backend do projeto **Task Master**, uma aplicação para gerenciamento de tarefas. O backend é construído usando **Node.js**, **Express** e **MongoDB**.
-
-## Requisitos
+Este é o backend do projeto Task Master, uma aplicação para gerenciamento de tarefas. O backend é construído usando Node.js, Express e MongoDB.
+Requisitos
 
 Antes de começar, você precisa ter o seguinte instalado na sua máquina:
 
-- [Node.js](https://nodejs.org/) (versão 14 ou superior)
-- [MongoDB](https://www.mongodb.com/) (ou um banco de dados MongoDB na nuvem, como MongoDB Atlas)
+    Node.js (versão 14 ou superior)
 
-## Instalação
+    MongoDB (ou um banco de dados MongoDB na nuvem, como o MongoDB Atlas)
 
-1. Clone este repositório:
+Instalação
 
-   ```bash
-   git clone https://github.com/seu-usuario/task-master-backend.git
-   cd task-master-backend
+    Clone este repositório:
 
-    Instale as dependências:
+git clone https://github.com/seu-usuario/task-master-backend.git
+cd task-master-backend
+
+Instale as dependências:
 
 npm install
 
@@ -61,66 +59,3 @@ Rotas
 /api/tasks/:id/complete
 
     PUT: Marca uma tarefa como concluída.
-
-Licença
-
-Este projeto está licenciado sob a MIT License.
-
-
----
-
-### **README do Frontend (React)**
-
-```markdown
-# Task Master Frontend
-
-Este é o frontend do projeto **Task Master**, uma aplicação de gerenciamento de tarefas construída com **React** e **Material-UI**.
-
-## Requisitos
-
-Antes de começar, você precisa ter o seguinte instalado na sua máquina:
-
-- [Node.js](https://nodejs.org/) (versão 14 ou superior)
-
-## Instalação
-
-1. Clone este repositório:
-
-   ```bash
-   git clone https://github.com/seu-usuario/task-master-frontend.git
-   cd task-master-frontend
-
-    Instale as dependências:
-
-npm install
-
-Inicie o servidor de desenvolvimento:
-
-    npm start
-
-    O aplicativo estará rodando em http://localhost:3000.
-
-Funcionalidades
-
-    Visualização de tarefas: Exibe todas as tarefas criadas, com a opção de marcá-las como concluídas.
-
-    Criação de tarefas: Permite adicionar novas tarefas com título e descrição.
-
-    Edição de tarefas: Permite editar as tarefas já criadas.
-
-    Filtragem de tarefas: Exibe tarefas filtradas por status (pendente ou concluída).
-
-    Design responsivo: Utiliza o Material-UI para criar uma interface limpa e responsiva.
-
-Integração com o Backend
-
-Este frontend se comunica com o backend do Task Master. Para configurar o backend, siga as instruções no README do Backend.
-
-No arquivo src/axios.js, a URL da API é configurada para o backend:
-
-const api = axios.create({
-  baseURL: "http://localhost:5000/api", // Altere se necessário
-});
-
----
-
