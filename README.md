@@ -1,77 +1,61 @@
-Projeto: TaskMaster - Gerenciador de Tarefas Inteligente
-Objetivo:
+Task Master Backend
 
-Aplicativo web para gerenciar tarefas e projetos, utilizando tecnologias modernas de desenvolvimento, como React para o front-end, Node.js para o back-end, e MongoDB para o banco de dados.
+Este é o backend do projeto Task Master, uma aplicação para gerenciamento de tarefas. O backend é construído usando Node.js, Express e MongoDB.
+Requisitos
 
-Funcionalidades:
+Antes de começar, você precisa ter o seguinte instalado na sua máquina:
 
-    Cadastro de Tarefas:
+    Node.js (versão 14 ou superior)
 
-        Permite que o usuário crie tarefas, defina prazos, prioridades e adicione descrições.
+    MongoDB (ou um banco de dados MongoDB na nuvem, como o MongoDB Atlas)
 
-    Organização por Projetos:
+Instalação
 
-        O usuário pode criar e gerenciar múltiplos projetos e associar tarefas a projetos específicos.
+    Clone este repositório:
 
-    Lista de Tarefas Interativa:
+git clone https://github.com/seu-usuario/task-master-backend.git
+cd task-master-backend
 
-        Mostra todas as tarefas em uma interface limpa, com filtros para visualização por data, prioridade e status.
+Instale as dependências:
 
-    Status das Tarefas:
+npm install
 
-        A tarefa pode ter diferentes status (ex.: Pendente, Em Progresso, Concluída) e ser atualizada facilmente.
+Crie um arquivo .env na raiz do projeto e defina as variáveis de ambiente necessárias:
 
-    Notificações:
+MONGO_URI=<sua_string_de_conexao_mongodb>
+PORT=5000
 
-        Notifique o usuário quando uma tarefa está prestes a vencer ou se o prazo de uma tarefa foi alterado.
+Inicie o servidor:
 
-    Sistema de Autenticação e Autorização:
+    npm start
 
-        Permite que diferentes usuários se registrem e gerenciem suas próprias tarefas. Inclui login com autenticação JWT.
+    O servidor estará rodando em http://localhost:5000.
 
-    Integração com Calendário:
+Rotas
+/api/tasks
 
-        Integração com uma API de calendário (como Google Calendar) para exibir tarefas no calendário e permitir que o usuário visualize os prazos de forma mais intuitiva.
+    GET: Obtém todas as tarefas.
 
-    Pesquisa e Filtros Avançados:
+    POST: Cria uma nova tarefa. Exemplo de corpo da requisição:
 
-        O sistema permitirá que o usuário busque e filtre tarefas por diferentes parâmetros, como prazo, prioridade, e projetos.
+    {
+      "title": "Nova Tarefa",
+      "description": "Descrição da tarefa"
+    }
 
-    Interface Responsiva:
+/api/tasks/:id
 
-        Crie uma UI/UX responsiva para que o sistema funcione bem tanto em desktops quanto dispositivos móveis.
+    GET: Obtém uma tarefa específica.
 
-    Relatórios e Estatísticas:
+    PUT: Atualiza uma tarefa existente. Exemplo de corpo da requisição:
 
-        O usuário poderá visualizar gráficos e relatórios sobre o desempenho das tarefas (quantas tarefas foram concluídas em um mês, por exemplo).
+    {
+      "title": "Tarefa Atualizada",
+      "description": "Descrição atualizada"
+    }
 
-    Tema Claro e Escuro:
+    DELETE: Deleta uma tarefa específica.
 
-        Inclua a funcionalidade de alternar entre temas claro e escuro para uma experiência personalizada.
+/api/tasks/:id/complete
 
-Tecnologias:
-
-    Front-end:
-
-        React (com hooks e context API).
-
-        Tailwind CSS para um design moderno e responsivo.
-
-        Axios para fazer requisições HTTP.
-
-    Back-end:
-
-        Node.js com Express para criar uma API RESTful.
-
-        JWT (JSON Web Tokens) para autenticação de usuários.
-
-        MongoDB para armazenar as tarefas, usuários e projetos.
-
-    Extras:
-
-        Mongoose para interação com MongoDB.
-
-        Node-cron ou Agenda para agendamento de notificações e tarefas periódicas.
-
-        Heroku ou Vercel para hospedagem do projeto.
-
+    PUT: Marca uma tarefa como concluída.
